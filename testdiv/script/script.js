@@ -1,12 +1,12 @@
 $.ajax({
-    url: 'lista.json',
+    url: 'http://disfuncionarios.org:3000/api/zone',
     dataType: 'json',
     type: 'get',
     cache: false,
     success: function(data){
 
         $(data.muncipios).each(function(index, value){
-            $("#myselect").append('<option value="'+ this.value +'">'+ this.name +'</option>'+'<a href="/municipios/' + this.name + '</a>')
+            $("#municipios").append('<option value="'+ this.name +'">'+ this.name +'</option>')
 
             console.log(value.name);
         });
